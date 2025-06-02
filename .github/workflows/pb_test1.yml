@@ -29,7 +29,7 @@ jobs:
 
       - name: Compiler test script
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: '$env:ProgramFiles\PureBasic\Compilers\pbcompilerc.exe OpenWindow.pb'
+        run: 'C:\Program Files\PureBasic\Compilers\pbcompilerc.exe OpenWindow.pb'
    #     run: '%PUREBASIC_HOME%\Compilers\pbcompilerc.exe'
         # run: '%PUREBASIC_HOME%\Compilers\pbcompilerc.exe %GITHUB_WORKSPACE%\OpenWindow.pb'
         shell: cmd
