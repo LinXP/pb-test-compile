@@ -19,9 +19,7 @@ jobs:
       - name: Setup PB Compiler
         uses: LinXP/pb_compiller/@main
 
-      - name: Ched dir1
-        run: ls '%PUREBASIC_HOME%' -R
-        shell: cmd
+
 
   #    - name: Ched dir2
   #      run: ls '%PUREBASIC_HOME%\Compilers\'
@@ -34,8 +32,14 @@ jobs:
         # run: '%PUREBASIC_HOME%\Compilers\pbcompilerc.exe %GITHUB_WORKSPACE%\OpenWindow.pb'
         shell: cmd
 
+      - name: Ched dir1
+        run: ls '%PUREBASIC_HOME%' -R
+        shell: cmd
+        
+
       - name: Run compiler exe
-        run: '%GITHUB_WORKSPACE%\OpenWindow.exe'
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: 'OpenWindow.exe'
         shell: cmd
         
 
