@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: test.zip
-         path: ${{env.GITHUB_WORKSPACE}}
+         path: .
 
       - name: Run compiler exe
         working-directory: ${{env.GITHUB_WORKSPACE}}
