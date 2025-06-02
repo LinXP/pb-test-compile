@@ -19,8 +19,12 @@ jobs:
       - name: Setup PB Compiler
         uses: LinXP/pb_compiller/@main
 
-      - name: Ched dir
-        run: ls
+      - name: Ched dir1
+        run: ls '%APUREBASIC_HOME%' -R
+        shell: cmd
+
+      - name: Ched dir2
+        run: ls '%APUREBASIC_HOME%\Compilers\'
         shell: cmd
 
       - name: Compiler test script
