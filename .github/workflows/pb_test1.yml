@@ -33,7 +33,12 @@ jobs:
         shell: cmd
 
       - name: Ched dir1
-        run: ls '%PUREBASIC_HOME%' -R
+        run: ls  -R
+        shell: cmd
+
+      - name: Ched dir2
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: ls  -R
         shell: cmd
         
 
