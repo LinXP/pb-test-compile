@@ -9,7 +9,15 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup PB Compiler
         uses: LinXP/pb_compiller/@main
-        
+
+      - name: Test env
+        run: |
+         echo github.action_path    : ${{github.action_path}}
+         echo env.GITHUB_WORKSPACE  : ${{env.GITHUB_WORKSPACE}}
+         echo env.SOLUTION_FILE_PATH  : ${{env.SOLUTION_FILE_PATH}}
+        shell: pwsh
+
+      
       - name: Unpack Compiler script
         run: 'unzip purebasic_compiller_windows_x86.zip'
         shell: cmd
