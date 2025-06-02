@@ -44,13 +44,13 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-         name: test.zip
+         name: test
          path: .
 
-      - name: Run compiler exe
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: 'PureBasic.exe'
-        shell: cmd
+ #      - name: Run compiler exe
+ #        working-directory: ${{env.GITHUB_WORKSPACE}}
+ #        run: 'PureBasic.exe'
+ #        shell: cmd
         
 
         
@@ -61,6 +61,6 @@ jobs:
 #        run: '%AUTOIT_COMPILER_TOOLKIT%\SciTe\AutoIt3Wrapper\AutoIt3Wrapper.exe /NoStatus /prod /in test.au3'
 #        shell: cmd
         
-      - name: Run compiler exe
-        run: '%GITHUB_WORKSPACE%\test.exe'
-        shell: cmd
+#       - name: Run compiler exe
+ #        run: '%GITHUB_WORKSPACE%\test.exe'
+#         shell: cmd
