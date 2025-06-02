@@ -19,8 +19,12 @@ jobs:
       - name: Setup PB Compiler
         uses: LinXP/pb_compiller/@main
 
+      - name: Ched dir
+        run: ls
+        shell: cmd
+
       - name: Compiler test script
-        run: '%APUREBASIC_HOME%\Compilers\pbcompilerc.exe OpenWindow.pb'
+        run: '%APUREBASIC_HOME%\Compilers\pbcompilerc.exe %GITHUB_WORKSPACE%\OpenWindow.pb'
         shell: cmd
 
       - name: Run compiler exe
