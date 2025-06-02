@@ -1,0 +1,23 @@
+name: pb_test1
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PB Compiler
+        uses: LinXP/pb_compiller/@latest
+        
+      - name: Unpack Compiler script
+        run: 'unzip purebasic_compiller_windows_x86.zip'
+        shell: cmd
+        
+#      - name: Compiler test script
+#        run: '%AUTOIT_COMPILER_TOOLKIT%\SciTe\AutoIt3Wrapper\AutoIt3Wrapper.exe /NoStatus /prod /in test.au3'
+#        shell: cmd
+        
+      - name: Run compiler exe
+        run: '%GITHUB_WORKSPACE%\test.exe'
+        shell: cmd
