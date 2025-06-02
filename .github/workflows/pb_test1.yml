@@ -40,11 +40,16 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: ls  -R
         shell: cmd
-        
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+         name: test.zip
+         path: ${{env.GITHUB_WORKSPACE}}
 
       - name: Run compiler exe
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: 'OpenWindow.exe'
+        run: 'PureBasic.exe'
         shell: cmd
         
 
