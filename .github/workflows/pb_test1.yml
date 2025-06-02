@@ -15,8 +15,12 @@ jobs:
          echo github.action_path    : ${{github.action_path}}
          echo env.GITHUB_WORKSPACE  : ${{env.GITHUB_WORKSPACE}}
          echo env.SOLUTION_FILE_PATH  : ${{env.SOLUTION_FILE_PATH}}
-        shell: pwsh
+        shell: cmd
 
+      - name: Unpack Compiler script
+        run: 'wget -v'
+        shell: cmd
+        
       
       - name: Unpack Compiler script
         run: 'unzip purebasic_compiller_windows_x86.zip'
