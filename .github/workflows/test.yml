@@ -1,17 +1,14 @@
-name: Test
+name: Release Test
 
-on:
-  - push
-  - pull_request
+on: workflow_dispatch
 
 jobs:
   test:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Compiler Toolkit
-        run: .\install.ps1
-        shell: pwsh
+      - name: Setup Autoit Compiler Toolkit
+        uses: whatk233/setup-autoit-compiler-toolkit@main
       - name: Compiler test script
         run: '%AUTOIT_COMPILER_TOOLKIT%\SciTe\AutoIt3Wrapper\AutoIt3Wrapper.exe /NoStatus /prod /in test.au3'
         shell: cmd
