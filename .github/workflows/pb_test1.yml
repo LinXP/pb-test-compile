@@ -7,28 +7,30 @@ jobs:
     runs-on: windows-latest
     steps:
 
-      - name: Test env
-        run: |
-         echo github.action_path    : ${{github.action_path}}
-         echo env.GITHUB_WORKSPACE  : ${{env.GITHUB_WORKSPACE}}
-         echo env.SOLUTION_FILE_PATH  : ${{env.SOLUTION_FILE_PATH}}
-        shell: cmd
-
-      - name: test wget
-        run: 'wget -v'
-        shell: cmd
+#      - name: Test env
+#        run: |
+#         echo github.action_path    : ${{github.action_path}}
+ #        echo env.GITHUB_WORKSPACE  : ${{env.GITHUB_WORKSPACE}}
+ #        echo env.SOLUTION_FILE_PATH  : ${{env.SOLUTION_FILE_PATH}}
+ #       shell: cmd
 
         
       - uses: actions/checkout@v3
       - name: Setup PB Compiler
         uses: LinXP/pb_compiller/@main
 
+      - name: Compiler test script
+        run: '%APUREBASIC_HOME%\Compilers\pbcompilerc.exe OpenWindow.pb'
+        shell: cmd
+
+      - name: Run compiler exe
+        run: '%GITHUB_WORKSPACE%\OpenWindow.exe'
+        shell: cmd
+        
 
         
       
-      - name: Unpack Compiler script
-        run: 'unzip purebasic_compiller_windows_x86.zip'
-        shell: cmd
+
         
 #      - name: Compiler test script
 #        run: '%AUTOIT_COMPILER_TOOLKIT%\SciTe\AutoIt3Wrapper\AutoIt3Wrapper.exe /NoStatus /prod /in test.au3'
