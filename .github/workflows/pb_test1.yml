@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup PB Compiler
-        uses: LinXP/pb_compiller/@latest
+        uses: LinXP/pb_compiller/@6.20
         
       - name: Unpack Compiler script
         run: 'unzip purebasic_compiller_windows_x86.zip'
