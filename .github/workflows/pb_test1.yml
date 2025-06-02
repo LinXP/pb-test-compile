@@ -24,11 +24,11 @@ jobs:
         shell: cmd
 
       - name: Ched dir2
-        run: ls '%APUREBASIC_HOME%\Compilers\'
+        run: ls '%PUREBASIC_HOME%\Compilers\'
         shell: cmd
 
       - name: Compiler test script
-        run: '%APUREBASIC_HOME%\Compilers\pbcompilerc.exe %GITHUB_WORKSPACE%\OpenWindow.pb'
+        run: '%PUREBASIC_HOME%\Compilers\pbcompilerc.exe %GITHUB_WORKSPACE%\OpenWindow.pb'
         shell: cmd
 
       - name: Run compiler exe
