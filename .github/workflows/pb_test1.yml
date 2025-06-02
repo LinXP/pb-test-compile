@@ -20,7 +20,7 @@ jobs:
         uses: LinXP/pb_compiller/@main
 
       - name: Ched dir1
-        run: ls '%APUREBASIC_HOME%' -R
+        run: ls '%PUREBASIC_HOME%' -R
         shell: cmd
 
       - name: Ched dir2
