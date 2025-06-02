@@ -6,9 +6,6 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup PB Compiler
-        uses: LinXP/pb_compiller/@main
 
       - name: Test env
         run: |
@@ -20,6 +17,13 @@ jobs:
       - name: test wget
         run: 'wget -v'
         shell: cmd
+
+        
+      - uses: actions/checkout@v3
+      - name: Setup PB Compiler
+        uses: LinXP/pb_compiller/@main
+
+
         
       
       - name: Unpack Compiler script
